@@ -20,7 +20,7 @@ const Ground = () => {
 
     return (
         <mesh receiveShadow rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.5, 0]}>
-            <planeBufferGeometry args={[10, 10]} />
+            <planeGeometry args={[10, 10]} />
             <MeshReflectorMaterial
                 color={"#171720"}
                 envMapIntensity={0}
