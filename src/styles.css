@@ -2,9 +2,104 @@ html,
 body,
 #root,
 canvas {
-
     width: 100%;
     height: 100%;
     margin: 0;
     overflow: hidden;
+    box-sizing: border-box;
+    font-family: 'monospace';
+}
+
+#root {
+    display: flex;
+}
+
+.table-editor {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20%;
+    height: 100%;
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* border-radius: 10px; */
+}
+
+
+.table-editor__controls {
+    margin-top: 10px;
+    padding: 20px;
+    width: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    text-align: center;
+}
+
+.table-editor__controls:last-child {
+    margin-bottom: 10px;
+}
+
+.table-editor__controls>* {
+    margin-bottom: 5px;
+}
+
+.table-editor__controls>*:last-child {
+    margin-bottom: 0;
+}
+
+.table-editor__controls:last-child {
+    margin-bottom: 20px;
+    border: 1px dashed white;
+}
+
+.table-editor__control {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.table-editor__control>input,
+select {
+    width: 30%;
+    background-color: transparent;
+    border: 1px solid white;
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    outline: none;
+}
+
+.table-editor__control>select {
+    width: 60%;
+}
+
+.table-editor__control>select>option {
+    background-color: black;
+    color: #fff;
+}
+
+.table-editor__button>button,
+input[type=file] {
+    width: 100%;
+    background-color: transparent;
+    border: 1px solid white;
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    outline: none;
+    cursor: pointer;
 }
