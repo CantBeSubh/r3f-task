@@ -14,7 +14,6 @@ const TableEditor = ({ data, setData, legsRef, tableTopRef }) => {
                         onChange={e => {
                             setData({ ...data, tableTop: { ...data.tableTop, length: e.target.value } })
                             tableTopRef.current.scale.x = e.target.value
-                            // legsRef.current.position.x = e.target.value / 2 - 0.1
                         }}
                     />
                 </div>
@@ -40,11 +39,6 @@ const TableEditor = ({ data, setData, legsRef, tableTopRef }) => {
                 </div>
                 <div className="table-editor__control">
                     <label htmlFor="table-color">Color</label>
-                    {/* <input type="number" id="table-color" /> */}
-                    {/* <GithubPicker
-              color={data.tableTop.color}
-              onChangeComplete={color => setData({ ...data, tableTop: { ...data.tableTop, color: color.hex } })}
-            /> */}
                     <input type="color" id="table-color" value={data.tableTop.color}
                         onChange={e => {
                             setData({ ...data, tableTop: { ...data.tableTop, color: e.target.value } })
@@ -52,6 +46,26 @@ const TableEditor = ({ data, setData, legsRef, tableTopRef }) => {
                         }}
                     />
                 </div>
+                {/* Take texture file as input */}
+                <div className="table-editor__control">
+                    <label htmlFor="table-texture">Texture</label>
+                    {/* <input
+                        type="file"
+                        id="table-texture"
+                        // extensions = ".jpg, .png, .jpeg"
+                        accept=".jpg, .png, .jpeg"
+                        onChange={e => {
+                            const file = e.target.files[0]
+                            const reader = new FileReader()
+                            reader.readAsDataURL(file)
+                            reader.onload = e => {
+                                const texture = e.target.result
+                                // giving error
+                            }
+                        }}
+                    /> */}
+                </div>
+
             </div>
 
             {/* ==========LEGS=========== */}
@@ -78,7 +92,6 @@ const TableEditor = ({ data, setData, legsRef, tableTopRef }) => {
                             setData({ ...data, legs: { ...data.legs, height: e.target.value } })
                             // console.log(legsRef.current)
                             // legsRef.current.scale.z = e.target.value
-                            console.log(legsRef.current.children)
                             legsRef.current.children.forEach(mesh => {
                                 mesh.scale.y = e.target.value
                             }
